@@ -1,0 +1,21 @@
+/* pages/index/index.wxss */
+.show_btn{
+  border-radius: 40rpx;
+  width: 50%;
+  height: 80rpx;
+  background: #ef5350;
+  text-align: center;
+  line-height: 80rpx;
+  margin: -120rpx auto 40rpx;
+  position: relative;
+}
+.lr-box{
+  display: flex;
+}
+.box-left{
+  width: 100rpx;
+  text-align-last: justify
+}
+.box-right{
+  flex: 1;
+}

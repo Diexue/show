@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="index-page">
+<block wx:for="{{data2}}"wx:index="index">
+  <view class='show-box'style="height:{{item.height?item.height:'100%'}};widht:{{item.width?item.width:'100%'}};padding:{{item.padding?item.padding:'0px'}};margin:{{item.margin?item.margin:'0px'}};background:{{item.bg?item.bg:'#fff'}}">
+    <video wx:if="{{item.type=='video'}}" id="myVideo"style="width:100%" src="{{item.src}}"></video> 
+    <image wx:if="{{item.type=='img'}}" style="width: 100%; height: 200px; background-color: #eeeeee;" src="{{item.src}}"></image>
+    <view wx:if="{{item.type=='text'}}" class='text-box'style="font-size:{{item.textfontSize?item.textfontSize:'32rpx'}};color:{{item.textColor?item.textColor:'#ef5350'}}">
+      <view bindtap="{{item.url?'goUrl':''}}"data-page="{{item.url?item.url:''}}">{{item.data}}</view>
+    </view>
+    <view wx:if="{{item.showBtn}}" class='show_btn'bindtap="showBtn">显示表单</view>
+    <block wx:if="{{item.type=='form'}}">
+      <formList propData="{{item.items}}"bindformSubmit="formSubmit"propStyle="{{item.formStyle}}"></formList>
+    </block>
+  </view>
+  <view wx:if="{{item.write}}">
+    <button bindtap="goUrl"data-page="form">填写表单</button>
+  </view>
+</block>
+<formCard wx:if="{{showForm}}" id="formCard"bindformSubmit="formSubmit"bindclose="close"></formCard>
+</view>

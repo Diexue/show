@@ -1,0 +1,12 @@
+/* components/form-list/index.wxss */
+.lr-box{
+  display: flex;
+  align-items: center;
+}
+.box-left{
+  width: 100rpx;
+  text-align-last: justify
+}
+.box-right{
+  flex: 1;
+}

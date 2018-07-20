@@ -1,0 +1,40 @@
+<!--components/form-list/index.wxml-->
+    <form bindsubmit="_formSubmit" bindreset="_formReset">
+      <slot></slot>
+      <block wx:for="{{propData}}"wx:for-item="form">
+        <view class='lr-box'style="witdh:{{propStyle.listwidth?propStyle.listwidth:'100%'}};height:{{propStyle.listheight?propStyle.listheight:'auto'}};color:{{propStyle.listcolor?propStyle.listcolor:'#333'}};padding:{{propStyle.padding?propStyle.padding:''}}">
+          <view class='box-left'>{{form.filed}}</view>
+          <view class='box-right'>
+            <block wx:if="{{form.data_type=='text'}}">
+              <input type='text'name="{{form.data_val}}"></input>
+            </block>
+            <block wx:if="{{form.data_type=='pass'}}">
+              <input type='text' password name="{{form.data_val}}"></input>
+            </block>
+            <block wx:if="{{form.data_type=='textarea'}}">
+              <textarea type='text'name="{{form.data_val}}"></textarea>
+            </block>
+            <block wx:if="{{form.data_type=='radio'}}">
+              <radio-group name="{{form.data_val}}">
+                <label wx:for='{{form.options}}'wx:for-item="options">
+                  <radio value='{{options}}'></radio>{{options}}
+                </label>
+              </radio-group>
+            </block>
+            <block wx:if="{{form.data_type=='checkbox'}}">
+              <checkbox-group name="{{form.data_val}}">
+                <label wx:for='{{form.options}}'wx:for-item="options">
+                  <checkbox style='' value='{{options}}'></checkbox>{{options}}
+                </label>
+              </checkbox-group>
+            </block>
+            <block wx:if="{{form.data_type=='date'}}">
+              <picker bindchange="" mode="date"value="2017-07-09"start="2013-07-09"end="2019-09-09" name="{{form.data_val}}">
+                <view>2017-09-09</view>
+              </picker>
+            </block>
+          </view>
+        </view>
+      </block>
+      <button style='width:{{propStyle.btnwidth?propStyle.btnwidth:"100%"}};background:{{propStyle.btnbg?propStyle.btnbg:"#ef5350"}}' type="primary" formType="submit">提交</button>
+    </form>

@@ -1,0 +1,19 @@
+<!--components/form/index.wxml-->
+<view class='form-card'>
+  <view class='bg_mask'bindtouchstart="_close"></view>
+  <form class='form'catchtouchmove='stop' catchsubmit="_formSubmit"catchreset="_formReset">
+    <view class='form-list'>
+      <view class='iconfont icon-diamond'></view>
+      <input name="userName" class='form-content' placeholder='您的姓名'></input>
+    </view>
+    <view class='form-list'>
+      <view class='iconfont icon-diamond'></view>
+      <input name="phoneNum" class='form-content' placeholder='您的手机号'></input>
+    </view>
+    <button class='btn' formType='submit'>立即领取</button>
+  </form>
+  <view class='close'bindtap="_close">
+    <view class='iconfont icon-close'></view>
+  </view>
+  
+</view>

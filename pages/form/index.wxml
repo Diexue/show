@@ -1,0 +1,2 @@
+<!--pages/form/index.wxml-->
+<formList propData="{{formData}}"bindformSubmit="formSubmit"></formList>

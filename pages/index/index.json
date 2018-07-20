@@ -1,0 +1,6 @@
+{
+  "usingComponents":{
+    "formCard":"/components/formCard/index",
+    "formList": "/components/form-list/index"
+  }
+}

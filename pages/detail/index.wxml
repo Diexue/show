@@ -1,0 +1,4 @@
+<!--pages/detail/inde.wxml-->
+<view>
+  <web-view src=""></web-view>
+</view>

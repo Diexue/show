@@ -1,0 +1,5 @@
+{
+  "usingComponents":{
+    "formList":"/components/form-list/index"
+  }
+}
